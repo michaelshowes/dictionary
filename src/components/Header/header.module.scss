@@ -1,0 +1,28 @@
+.header {
+	display: flex;
+	align-items: center;
+	padding: 24px 0;
+
+	@include from($bp) {
+		padding: 50px 0;
+	}
+
+	a {
+		margin-right: auto;
+
+		svg {
+			width: 28px;
+
+			@include from($bp) {
+				width: 34px;
+			}
+		}
+	}
+
+	.divider {
+		background-color: color(gray, 200);
+		width: 1px;
+		height: 32px;
+		margin: 0 26px 0 16px;
+	}
+}

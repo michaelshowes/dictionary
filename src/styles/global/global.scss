@@ -1,0 +1,101 @@
+@use './settings.scss' as *;
+@use './colors.scss' as *;
+@use '../mixins' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme='dark'] {
+	body {
+		background-color: $body-bg-dark;
+		color: $body-color-dark;
+	}
+}
+
+[data-font='sans'] {
+	body {
+		font-family: $sans;
+
+		input {
+			&::placeholder {
+				font-family: $sans;
+			}
+		}
+	}
+}
+
+[data-font='serif'] {
+	body {
+		font-family: $serif;
+
+		input {
+			&::placeholder {
+				font-family: $serif;
+			}
+		}
+	}
+}
+
+[data-font='mono'] {
+	body {
+		font-family: $mono;
+
+		input {
+			&::placeholder {
+				font-family: $mono;
+			}
+		}
+	}
+}
+
+body {
+	-webkit-backface-visibility: hidden;
+	background-color: $body-bg-light;
+	position: relative;
+	min-height: 100vh;
+	color: $body-color-light;
+	font-family: $sans;
+	font-size: 100%;
+	line-height: 1.15;
+	text-rendering: optimizeSpeed;
+	padding: 0 24px;
+	transition: 0.1s ease-in-out;
+
+	@include from($bp) {
+		padding: 0 40px;
+	}
+}
+
+button {
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	li {
+		&::marker {
+			color: $accent;
+		}
+	}
+}

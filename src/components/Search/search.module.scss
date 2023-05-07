@@ -1,0 +1,91 @@
+.search {
+	position: relative;
+
+	@include from($bp) {
+		font-size: 1.25rem;
+	}
+
+	&.dark {
+		& > div {
+			background-color: color(gray, 600);
+
+			input {
+				color: white;
+
+				&::placeholder {
+					color: white;
+				}
+			}
+		}
+	}
+
+	&:invalid {
+		> div {
+			outline: 1px solid $error;
+
+			&:focus-within {
+				outline: 1px solid $error;
+			}
+		}
+
+		span {
+			opacity: 1;
+		}
+	}
+
+	> div {
+		display: flex;
+		align-items: center;
+		background-color: color(gray, 100);
+		padding: 0 24px;
+		border-radius: 16px;
+
+		&:focus-within {
+			outline: 1px solid $accent;
+		}
+
+		input {
+			background: none;
+			color: color(gray, 500);
+			font-size: 1rem;
+			font-weight: 700;
+			width: 100%;
+			padding: 15px 0;
+			margin-right: 10px;
+			border: 0;
+
+			@include from($bp) {
+				font-size: 1.25rem;
+				padding: 20px 0;
+			}
+
+			&::placeholder {
+				color: color(gray, 500);
+				opacity: 0.25;
+			}
+
+			&::-webkit-search-cancel-button {
+				-webkit-appearance: none;
+				// cursor: pointer;
+				// width: 6px;
+				// height: 6px;
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		svg {
+			width: 16px;
+		}
+	}
+
+	span {
+		position: absolute;
+		top: calc(100% + 8px);
+		color: $error;
+		opacity: 0;
+		transition: opacity 0.1s ease-in-out;
+	}
+}

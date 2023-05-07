@@ -1,0 +1,16 @@
+@use './colors.scss' as *;
+
+// Breakpoints
+$bp: 6;
+
+// Fonts
+$sans: var(--inter-font);
+$serif: var(--lora-font);
+$mono: var(--inconsolata-font);
+
+// Colors
+$body-bg-light: white;
+$body-bg-dark: color(gray, 700);
+
+$body-color-light: color(gray, 500);
+$body-color-dark: white;

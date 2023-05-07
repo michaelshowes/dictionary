@@ -1,0 +1,23 @@
+.playButton {
+	width: 48px;
+	height: 48px;
+
+	@include from($bp) {
+		width: 75px;
+		height: 75px;
+	}
+
+	svg {
+		&:hover {
+			circle {
+				opacity: 1;
+				transition: 0.1s ease-in-out;
+			}
+
+			path {
+				fill: white;
+				transition: 0.1s ease-in-out;
+			}
+		}
+	}
+}
